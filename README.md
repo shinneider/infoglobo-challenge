@@ -26,7 +26,7 @@ This is a project to crawler RSS Feed and transpile to json format.
     - Auth manager token (create and verify)
     - Generate token if user already registered
 
-- RSS
+- RSS Domain
     - RSS transpile RSS Feed to JSON
     - RSS transpile need authentication
 
@@ -117,7 +117,7 @@ After run in the first time,  in the root of project folders it is created a `./
 
 SPOILER ALERT   
 
-all apps logger in this fille, and all logger contains idLog and idReq, idLog is unique browser id and idReq is generated everytime wich user get a new url (however this last id is unique in all steps of request, is possible to track start point and steps in the middle of the requests)
+all apps logger in this fille, and all logger contains idLog and idReq, idLog is unique browser id and idReq is generated every time wich user get a new url (however this last id is unique in all steps of request, is possible to track start point and steps in the middle of the requests)
 
 
 - How this work ? 
@@ -131,7 +131,7 @@ all apps logger in this fille, and all logger contains idLog and idReq, idLog is
     docker-compose run (account,auth,gateway or rss) run-test
     ```
 
-2. inside docker-compose (no need download all dependecy everytime)
+2. inside docker-compose (no need to download all dependency every time)
     ```
     docker-compose run (account,auth,gateway or rss) /bin/sh
     run-test
