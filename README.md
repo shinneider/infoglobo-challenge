@@ -160,7 +160,7 @@ OBS: In python structures, we try to keep django syntax, because it's the best k
 
 # ISN'T READY FOR PRODUCTION
 all apps are running using the framework webserver, for this reason not use this in production.  
-configure apps correctly for production before this has many tutorials in the web
+configure apps correctly for production, has many tutorials in the web
 
 # Another OBS
 - TODO Atention -> if use vscode, i suggest to install `Todo Tree` in your IDE to see all todo's in the code.
