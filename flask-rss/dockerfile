@@ -1,0 +1,15 @@
+FROM python:3.6-alpine
+
+# Env vars
+ENV PYTHONUNBUFFERED 1
+
+# Create app directory
+WORKDIR /usr/src/app
+COPY . .
+
+# Make executable scripts
+RUN cp ./scripts/runserver.sh /usr/local/bin/run-server
+RUN cp ./scripts/test.sh /usr/local/bin/run-test
+RUN cp ./scripts/deploy.sh /usr/local/bin/run-deploy
+
+CMD run-server

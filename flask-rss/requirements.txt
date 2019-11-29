@@ -1,0 +1,6 @@
+flask
+python-decouple
+flask-restful
+requests
+beautifulsoup4
+feedparser
