@@ -163,7 +163,7 @@ all apps are running using the framework webserver, for this reason not use this
 configure apps correctly for production, has many tutorials in the web
 
 # Another OBS
-- TODO Atention -> if use vscode, i suggest to install `Todo Tree` in your IDE to see all todo's in the code.
+- TODO Attention -> if use vscode, i suggest to install `Todo Tree` in your IDE to see all todo's in the code.
 - Python Linter -> use pylint and pep8 and set line length to 100
 - Node Linter -> use prettier and set to use single quote
 - Linters -> I suggest to enable format on save and dissable auto save in your IDE
