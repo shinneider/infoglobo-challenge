@@ -1,0 +1,28 @@
+{
+    "develop": {
+        "django_settings": "config.settings",
+        "project_name": "django-account",
+        "runtime": "python3.6",
+        "s3_bucket": "infoglobo-back-develop",
+        "memory_size": 128,
+        "exclude": [
+            "static",
+            "staticfiles",
+            "media",
+            ".vscode",
+            "project.db",
+            "boto3",
+            "botocore"
+        ],
+        "environment_variables": {
+            "DB_USER": "root",
+            "DB_PASS": "root1234",
+            "DB_HOST": "HOST HERE",
+            "DB_PORT": "5432",
+            "DB_NAME": "infoglobo",
+            
+            "DEBUG": "True",
+            "S3_BUCKET_NAME": "infoglobo-back-develop"
+        }
+    }
+}

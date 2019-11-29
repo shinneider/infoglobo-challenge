@@ -1,0 +1,1 @@
+from app.accounts.api_v1.views.account import *

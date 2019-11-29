@@ -1,0 +1,20 @@
+image: python:3.6-stretch
+
+pipelines:
+  branches:
+  
+    develop:
+      - step:
+          name: Deploy in develop
+          caches:
+            - pip
+          script:
+            - STAGE=develop scripts/deploy.sh
+
+    master:
+      - step:
+          name: Deploy in Production
+          caches:
+            - pip
+          script:
+            - STAGE=production scripts/deploy.sh
