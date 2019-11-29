@@ -91,8 +91,8 @@ This is a project to crawler RSS Feed and transpile to json format.
     - RSS
         - `GET /v1/rss/json`               (Auth)
 
-OBS: All urls have a body validator, because this i don't specify body params here, after hit url you're receive a body params.  
-In the postman url, all body params is present is saved urls.
+OBS: All urls have a body validator, because this i don't specify body params here, after your hit a url you're receive a body params.  
+In the postman url, all body params is present in saved urls.
 
 OBS: to change password in `Account` use `PUT` or `PATCH` url and pass `password` key/value in the body.
 
@@ -154,7 +154,7 @@ All micro services has `/script/` folder this is a script to start, run test and
     - `/shared` is a code shared between all apps of aplication (reusable codes, middleware, interceptors)
     - `/app-name` is a self contained app, no has dependecy of another apps to work
         - `api_v*` is a folder to versioning api of app, used to more organization in the future when app has many versions URLs
-- `./scripts/` each script of application, facilitators scripts, test scripts, deploy script and more.
+- `/scripts/` each script of application, facilitators scripts, test scripts, deploy script and more.
 
 OBS: In python structures, we try to keep django syntax, because it's the best known python framework, and it's simple to teach another framework to others people if the syntax and organization is similar.
 
@@ -167,3 +167,9 @@ configure apps correctly for production, has many tutorials in the web
 - Python Linter -> use pylint and pep8 and set line length to 100
 - Node Linter -> use prettier and set to use single quote
 - Linters -> I suggest to enable format on save and dissable auto save in your IDE
+
+# Future improvements
+- SWAGGER -> ADD swagger in all micro services for mapper apis
+- CACHE -> ADD cache on RSS URL, because it has static content throughout the day
+- API GATEWAY -> Improve jwt validation (see a TODO inside `/src/shared/middleware/auth`)
+- API GATEWAY -> Improve inputd data logger (see a TODO inside `/src/shared/middleware/logger`)
