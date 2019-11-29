@@ -1,0 +1,26 @@
+image: node:10.15.0
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: Deploy in develop
+          caches:
+            - node
+          script:
+            # install packages
+            - yarn global add serverless
+            - yarn
+            # deploy
+            - yarn deploy:dev
+    master:
+      - step:
+          name: Deploy in production
+          caches:
+            - node
+          script:
+            # install packages
+            - yarn global add serverless
+            - yarn
+            # deploy
+            - yarn deploy:prod

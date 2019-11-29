@@ -1,0 +1,16 @@
+FROM node:10.17-alpine3.10
+
+# Create app directory
+WORKDIR /usr/src/app
+COPY . .
+
+# project dependecy
+RUN yarn
+
+# Make executable scripts
+RUN cp ./scripts/runserver.sh /usr/local/bin/run-server
+RUN cp ./scripts/test.sh /usr/local/bin/run-test
+RUN cp ./scripts/deploy.sh /usr/local/bin/run-deploy
+
+# run project
+CMD run-server

@@ -1,0 +1,45 @@
+service: api-gateway
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  memorySize: 128
+  stage: ${opt:stage, 'develop'}
+  timeout: 20
+  region: ${opt:region, env:AWS_DEFAULT_REGION, 'us-east-1'}
+  deploymentBucket:
+    name: suivre-back-${opt:stage, 'develop'}
+    serverSideEncryption: AES256
+
+plugins:
+  - serverless-offline
+  - serverless-bundle
+  - serverless-dotenv-plugin
+  - serverless-deployment-bucket
+
+package:
+  excludeDevDependencies: false
+  include:
+    - test/integration/**
+  exclude:
+    - test.js
+    - '.env.*.local'
+
+functions:
+  express:
+    handler: src/serverless.handler
+    events:
+      - http:
+          path: /
+          method: ANY
+      - http:
+          path: /{proxy+}
+          method: ANY
+
+custom:
+  dotenv:
+    include:
+      - PATH_PREFIX
+      - AUTH_URL
+      - ACCOUNT_URL
+      - TRACKER_URL
