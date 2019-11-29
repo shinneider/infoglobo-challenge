@@ -1,0 +1,54 @@
+version: '3'
+
+services:
+
+  account:
+    build: ./django-account/
+    environment:
+      - VSCODE_DEBUG=${VSCODE_DEBUG}
+    volumes:
+      - ./django-account/:/usr/src/app
+      - ./logs/:/usr/src/app/logs/
+    ports:
+      - "81:8000"
+      - "811:5678"
+    depends_on:
+      - postgres
+
+  auth:
+    build: ./django-auth/
+    environment:
+      - VSCODE_DEBUG=${VSCODE_DEBUG}
+    volumes:
+      - ./django-auth/:/usr/src/app
+      - ./logs/:/usr/src/app/logs/
+    ports:
+      - "82:8000"
+      - "812:5678"
+    depends_on:
+      - postgres
+
+  rss:
+    build: ./flask-rss/
+    volumes:
+      - ./flask-rss/:/usr/src/app
+      - ./logs/:/usr/src/app/logs/
+    ports:
+      - "83:8000"
+
+  gateway:
+    build: ./node-api-gateway/
+    volumes:
+      - ./node-api-gateway/:/usr/src/app
+      - ./logs/:/usr/src/app/logs/
+    ports:
+      - "80:3000"
+
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: "root"
+      POSTGRES_PASSWORD: "root1234"
+      POSTGRES_DB: "infoglobo"
