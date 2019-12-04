@@ -14,7 +14,7 @@ class IsAuthenticated:
 class IsAuthenticatedOrReadOnly:
     @classmethod
     def has_permission(self, request, view):
-        if request.method in SAFE_METHODS:
+        if request.method not in SAFE_METHODS:
             return request.headers.get('auth', None) == "true"
         else:
             return True
