@@ -57,6 +57,11 @@ This is a project to crawler RSS Feed and transpile to json format.
     ```
 
 # How to use project
+- Configure settings file  
+    Inside each project has a settings.sample.ini copy this and rename to settings.ini 
+    ```
+    cp ./settings.sample.ini ./settings.ini
+    ```
 - Start the project
     ```
     docker-compose up
